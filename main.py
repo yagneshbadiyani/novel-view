@@ -35,7 +35,7 @@ for seq in seq_list:
 # In[4]:
 
 
-def generate_kitti_batch(batch_size):
+def generate_kitti_batch(batch_size): #For generating a batch with preditiction to be done on central frame of the five frames
     given_frames=np.empty(shape=[batch_size,image_height,image_width,12])
     predict_frame=np.empty(shape=[batch_size,image_height,image_width,3])
     given_poses=np.empty(shape=[batch_size,3,4,4])
@@ -66,7 +66,7 @@ def generate_kitti_batch(batch_size):
         predict_pose[element]=pose3
     return given_frames,given_poses,predict_frame,predict_pose
 
-def generate_kitti_batch2(batch_size):
+def generate_kitti_batch2(batch_size):# For generating a batch with predictions to be done for fourth frame in given five frames
     given_frames=np.empty(shape=[batch_size,image_height,image_width,12])
     predict_frame=np.empty(shape=[batch_size,image_height,image_width,3])
     given_poses=np.empty(shape=[batch_size,3,4,4])
